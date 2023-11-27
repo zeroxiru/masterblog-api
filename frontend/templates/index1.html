@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Posts</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="static/styles.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+</head>
+<body>
+
+    <div class="container">
+        <h1>📚 Blog Posts</h1>
+        <!-- Search input and button in the header -->
+          <form class="navbar-form navbar-left">
+            <div class="input-group">
+                <input type="text" class="form-control" id="search-title" placeholder="Search by Title" style="width: 450px;">
+                <input type="text" class="form-control" id="search-content" placeholder="Search by Content" style="width: 450px;">
+                <div class="input-group-btn">
+                    <button id="search-button" class="btn btn-default" type="button" onclick="searchPosts()">
+                        <i class="glyphicon glyphicon-search"></i>
+                    </button>
+                </div>
+            </div>
+        </form> <br>
+        <div class="input-field">
+            <input type="text" id="api-base-url" placeholder="Enter API Base URL" value="http://127.0.0.1:5002/api">
+            <button onclick="loadPosts()">Load Posts</button>
+        </div>
+
+
+        <div class="input-field">
+            <input type="text" id="post-title" placeholder="Enter Post Title">
+            <input type="text" id="post-content" placeholder="Enter Post Content">
+            <button onclick="addPost()">Add Post</button>
+        </div>
+        <div id="update-form" style="display: none;">
+                <div class="input-field">
+            <input type="text" id="update-post-id" placeholder="Enter Post ID to Update" readonly>
+            <input type="text" id="update-post-title" placeholder="Enter New Title">
+            <input type="text" id="update-post-content" placeholder="Enter New Content">
+            <button onclick="updatePost()">Update Post</button>
+            <button onclick="hideUpdateForm()">Cancel</button>
+        </div>
+            </div>
+        <div id="post-container">
+            <!-- Blog posts will be inserted here by JavaScript -->
+        </div>
+    </div>
+
+    <script src="static/main.js"></script>
+</body>
+</html>
